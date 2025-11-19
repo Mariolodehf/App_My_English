@@ -4,7 +4,10 @@ export enum SkillType {
   LISTENING = 'LISTENING',
   WRITING = 'WRITING',
   READING = 'READING',
-  ROLEPLAY = 'ROLEPLAY' // New interactive mode
+  ROLEPLAY = 'ROLEPLAY',
+  TEST = 'TEST',
+  REINFORCEMENT = 'REINFORCEMENT', // Error correction mode
+  MINIGAME = 'MINIGAME' // Random fun mode
 }
 
 export enum CEFRLevel {
@@ -35,9 +38,18 @@ export interface Message {
   correction?: string; // Corrected version of user's input
 }
 
+export interface UserProfile {
+  name: string;
+  bioText: string;
+  bioAudio?: string; // Base64
+  lastUpdated: number;
+}
+
 export interface UserState {
   currentLevel: CEFRLevel;
   xp: number;
   streak: number;
   unlockedLessons: string[];
+  weakWords: string[]; // Array of concepts/words the user struggled with
+  profile: UserProfile;
 }
