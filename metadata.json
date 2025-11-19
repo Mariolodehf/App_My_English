@@ -1,0 +1,7 @@
+{
+  "name": "Copy of My English",
+  "description": "Una plataforma interactiva para aprender inglés de forma natural, desde A1 hasta C1, con práctica de conversación y tutoría IA.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
